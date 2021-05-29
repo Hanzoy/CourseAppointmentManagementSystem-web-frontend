@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.header>.logout{
+
+    margin-right: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.header>.logout:hover{
+    color: #26b3ff;
+}
