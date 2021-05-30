@@ -3,7 +3,7 @@ import './index.css';
 import Login from 'ant-design-pro/lib/Login';
 import 'ant-design-pro/dist/ant-design-pro.css';
 import { Alert, Checkbox, message } from 'antd';
-import axios from 'axios'
+import {login} from "../../utils/api";
 const { Tab, UserName, Password,  Submit } = Login;
 
 class Index extends Component {
@@ -23,14 +23,15 @@ class Index extends Component {
                     notice: '',
                 },
                 async () => {
-                    const data = JSON.stringify({password:values.password, username:values.username})
-                    const response = await axios.post('/manage/login', data);
+                    const response = await login({password:values.password, username:values.username});
+                    // const data = JSON.stringify({password:values.password, username:values.username})
+                    // const response = await axios.post('/manage/login', data);
                     console.log(response)
-                    if(response.data.code !== "00000"){
-                        message.error('登陆失败：'+response.data.message);
+                    if(response.code !== "00000"){
+                        message.error('登陆失败：'+response.message);
                     }else{
                         const localStorage = window.localStorage;
-                        localStorage.setItem("token", response.data.data.token);
+                        localStorage.setItem("token", response.data.token);
                         this.props.history.push("/");
                     }
                     // if (!err && (values.username !== 'admin' || values.password !== '888888')) {
@@ -74,8 +75,8 @@ class Index extends Component {
                                         closable
                                     />
                                 )}
-                                <UserName name="username" />
-                                <Password name="password" />
+                                <UserName name="username" placeholder="用户名"/>
+                                <Password name="password" placeholder="密码"/>
                             </Tab>
 
                             <div>

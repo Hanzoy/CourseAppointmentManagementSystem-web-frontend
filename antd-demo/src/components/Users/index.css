@@ -1,0 +1,11 @@
+.search-box{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.search-box>.search-in{
+    margin-right: 20px;
+    width: 400px;
+}
