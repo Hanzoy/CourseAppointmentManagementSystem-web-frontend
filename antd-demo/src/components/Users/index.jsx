@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './index.css'
 import { Table, Input, InputNumber, Popconfirm, Form, Avatar, Button } from 'antd';
 import {changeUserInformation, getAllUsers, getAllUsersByKey} from "../../utils/api";
+import {NavLink} from "react-router-dom";
 
 const { Search } = Input;
 const data = [];
@@ -108,9 +109,11 @@ class EditableTable extends React.Component {
                         </span>
                     ) : (
                         <div>
-                            <Button disabled={editingKey !== ''} onClick={() => this.look(record.openid)}>
-                                查看
-                            </Button>
+                            <NavLink to={`/home/users/info/${record.openid}`}>
+                                <Button disabled={editingKey !== ''} onClick={() => this.look(record.openid)}>
+                                    查看
+                                </Button>
+                            </NavLink>
                             &nbsp;
                             <Button disabled={editingKey !== ''} onClick={() => this.edit(record.openid)}>
                                 修改

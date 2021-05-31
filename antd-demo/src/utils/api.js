@@ -92,6 +92,128 @@ export const changeUserInformation = async (param)=>
 
 /*========================================================*/
 
+/*========================================================*/
+//查看用户详情
+export const getUserInfo = async (param)=>{
+  return await Request({
+    url:'/manage/getUserInfo',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const manageGetSwiper = async ()=>{
+  return await Request({
+    url:'/manageGetSwiper',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token")
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const addSwiper = async (param)=>{
+  return await Request({
+    url:'/addSwiper',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const addVenue = async (param)=>{
+  return await Request({
+    url:'/addVenue',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const deleteSwiper = async (param)=>{
+  return await Request({
+    url:'/deleteSwiper',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const deleteVenue = async (param)=>{
+  return await Request({
+    url:'/deleteVenue',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const editSwiper = async (param)=>{
+  return await Request({
+    url:'/editSwiper',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const editVenue = async (param)=>{
+  return await Request({
+    url:'/editVenue',
+    method: 'POST',
+    data:{
+      token: localStorage.getItem("token"),
+      ...param
+    }
+  })
+}
+/*========================================================*/
+
+/*========================================================*/
+//管理员获取滑动条内容
+export const getVenue = async ()=>{
+  return await Request({
+    url:'/getVenue',
+    method: 'GET'
+  })
+}
+/*========================================================*/
+
 
 
 

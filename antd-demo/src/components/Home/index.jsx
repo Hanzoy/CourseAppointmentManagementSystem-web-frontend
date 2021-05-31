@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import {NavLink, Redirect, Route, Switch} from 'react-router-dom';
 import TheIndex from '../TheIndex'
 import Users from '../Users'
-import Client from '../Client'
+import Swiper from '../Client/Swiper'
+import Coach from '../Client/Coach'
+import Venue from '../Client/Venue'
 import TheClass from '../TheClass'
 import SettingAdmin from '../SettingAdmin'
 import SettingPassword from '../SettingPassword'
+import UserInfo from '../Users/UserInfo'
 import './index.css';
 import { Menu, Icon, Layout, Breadcrumb } from 'antd';
 const { SubMenu } = Menu;
@@ -55,14 +58,21 @@ class Index extends Component {
                             <span>用户管理</span>
                         </NavLink>
                     </Menu.Item>
-                    <Menu.Item key="3">
-                        <NavLink to="/home/client">
-                            <Icon type="inbox" />
-                            <span>客户端管理</span>
-                        </NavLink>
-                    </Menu.Item>
                     <SubMenu
                         key="sub1"
+                        title={
+                            <span>
+                            <Icon type="inbox" />
+                            <span>客户端管理</span>
+                        </span>
+                        }
+                    >
+                        <Menu.Item key="5"><NavLink to="/home/client/swiper">静态轮播图</NavLink></Menu.Item>
+                        <Menu.Item key="6"><NavLink to="/home/client/coach">教练</NavLink></Menu.Item>
+                        <Menu.Item key="7"><NavLink to="/home/client/venue">场馆</NavLink></Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="sub2"
                         title={
                             <span>
                             <Icon type="mail" />
@@ -75,7 +85,7 @@ class Index extends Component {
                         <Menu.Item key="7"><NavLink to="/home/class">课程</NavLink></Menu.Item>
                     </SubMenu>
                     <SubMenu
-                        key="sub2"
+                        key="sub3"
                         title={
                             <span>
                             <Icon type="appstore" />
@@ -109,8 +119,11 @@ class Index extends Component {
                             <Route exact path="/" component={TheIndex}/>
                             <Route exact path="/home" component={TheIndex}/>
                             <Route path="/home/index" component={TheIndex}/>
-                            <Route path="/home/users" component={Users}/>
-                            <Route path="/home/client" component={Client}/>
+                            <Route path="/home/users/info/:openid" component={UserInfo}/>
+                            <Route exact path="/home/users" component={Users}/>
+                            <Route path="/home/client/swiper" component={Swiper}/>
+                            <Route path="/home/client/coach" component={Coach}/>
+                            <Route path="/home/client/venue" component={Venue}/>
                             <Route path="/home/class" component={TheClass}/>
                             <Route path="/home/setting/admin" component={SettingAdmin}/>
                             <Route path="/home/setting/changePassword" component={SettingPassword}/>
