@@ -86,6 +86,12 @@ class EditableTable extends React.Component {
                 editable: true,
             },
             {
+                title: 'remark',
+                dataIndex: 'remark',
+                key: 'remark',
+                editable: true,
+            },
+            {
                 title: '设置',
                 dataIndex: 'operation',
                 render: (text, record) => {

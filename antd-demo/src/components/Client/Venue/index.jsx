@@ -3,6 +3,8 @@ import { Upload, Icon, message } from 'antd';
 import { Table, Input, Button, Popconfirm, Form } from 'antd';
 import './index.css'
 import {getVenue, addVenue, deleteVenue, editVenue} from "../../../utils/api";
+import {baseUrl} from "../../../utils/request";
+
 const EditableContext = React.createContext();
 
 const EditableRow = ({ form, index, ...props }) => (
@@ -148,7 +150,7 @@ class Avatar extends React.Component {
                 listType="picture-card"
                 className="avatar-uploader"
                 showUploadList={false}
-                action={`http://127.0.0.1:8080/venue/uploadFile?id=${this.props.record.id}`}
+                action={`${baseUrl}/venue/uploadFile?id=${this.props.record.id}`}
                 beforeUpload={beforeUpload}
                 onChange={this.handleChange}
             >

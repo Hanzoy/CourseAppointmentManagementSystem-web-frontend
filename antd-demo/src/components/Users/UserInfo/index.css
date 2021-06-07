@@ -1,7 +1,12 @@
 .title {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 16px;
     font-weight: 500;
     font-size: 16px;
+}
+.title>.text{
+    margin-right: 30px;
 }
 .w-back{
     display: flex;

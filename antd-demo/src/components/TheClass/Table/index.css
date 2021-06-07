@@ -1,0 +1,38 @@
+.events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.events .ant-badge-status {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120%;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+.notes-month {
+    text-align: center;
+    font-size: 28px;
+}
+.notes-month section {
+    font-size: 28px;
+}
+.card{
+    display: flex;
+}
+.card-init{
+    display: flex;
+}
+.total-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.total-title>.left{
+    width: 50%;
+}
+.total-title>.right{
+    display: flex;
+    width: 50%;
+    flex-direction: row-reverse;
+}

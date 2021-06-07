@@ -9,6 +9,9 @@ import TheClass from '../TheClass'
 import SettingAdmin from '../SettingAdmin'
 import SettingPassword from '../SettingPassword'
 import UserInfo from '../Users/UserInfo'
+import Table from '../TheClass/Table'
+import ExTable from '../TheClass/ExTable'
+import TheTable from '../TheTable'
 import './index.css';
 import { Menu, Icon, Layout, Breadcrumb } from 'antd';
 const { SubMenu } = Menu;
@@ -67,9 +70,9 @@ class Index extends Component {
                         </span>
                         }
                     >
-                        <Menu.Item key="5"><NavLink to="/home/client/swiper">静态轮播图</NavLink></Menu.Item>
-                        <Menu.Item key="6"><NavLink to="/home/client/coach">教练</NavLink></Menu.Item>
-                        <Menu.Item key="7"><NavLink to="/home/client/venue">场馆</NavLink></Menu.Item>
+                        <Menu.Item key="3"><NavLink to="/home/client/swiper">静态轮播图</NavLink></Menu.Item>
+                        <Menu.Item key="4"><NavLink to="/home/client/coach">教练</NavLink></Menu.Item>
+                        <Menu.Item key="5"><NavLink to="/home/client/venue">场馆</NavLink></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="sub2"
@@ -80,9 +83,9 @@ class Index extends Component {
                         </span>
                         }
                     >
-                        <Menu.Item key="5"><NavLink to="/home/class">课程</NavLink></Menu.Item>
-                        <Menu.Item key="6"><NavLink to="/home/class">课程</NavLink></Menu.Item>
-                        <Menu.Item key="7"><NavLink to="/home/class">课程</NavLink></Menu.Item>
+                        <Menu.Item key="6"><NavLink to="/home/class/setting">课程管理</NavLink></Menu.Item>
+                        <Menu.Item key="7"><NavLink to="/home/class/table">课程表</NavLink></Menu.Item>
+                        <Menu.Item key="8"><NavLink to="/home/class/exTable">课程模版</NavLink></Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="sub3"
@@ -124,7 +127,10 @@ class Index extends Component {
                             <Route path="/home/client/swiper" component={Swiper}/>
                             <Route path="/home/client/coach" component={Coach}/>
                             <Route path="/home/client/venue" component={Venue}/>
-                            <Route path="/home/class" component={TheClass}/>
+                            <Route path="/home/class/setting" component={TheClass}/>
+                            <Route exact path="/home/class/table" component={Table}/>
+                            <Route path="/home/class/table/info/:courseId/:date" component={TheTable}/>
+                            <Route path="/home/class/exTable" component={ExTable}/>
                             <Route path="/home/setting/admin" component={SettingAdmin}/>
                             <Route path="/home/setting/changePassword" component={SettingPassword}/>
                         </Switch>

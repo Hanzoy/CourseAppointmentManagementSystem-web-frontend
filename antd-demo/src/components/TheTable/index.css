@@ -1,0 +1,13 @@
+.top{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.top>.top-left{
+    width: 80%;
+}
+.top>.top-right{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 20%;
+}
